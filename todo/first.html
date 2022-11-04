@@ -1,0 +1,73 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>
+        todo list
+    </title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+
+</head>
+
+<body background="bg.jpg">
+
+
+    <div class="img">
+
+        <img style="width:150px;margin-bottom: 40px;" src="to.png">
+    </div>
+
+    <div class="cont">
+        <div id="list">
+            <input type="text" placeholder="Enter Here..">
+
+            <button class="add">Add</button>
+
+
+        </div>
+
+        <div id="todo"></div>
+    </div>
+
+    <script>
+
+
+        document.querySelector('.add').onclick =
+            function () {
+                if (document.querySelector('#list input').value.length == 0) {
+
+                    window.alert("Enter a value");
+
+                }
+                else {
+                    document.querySelector('#todo').innerHTML
+                        += `<div class="task"><span id="taskname">${document.querySelector("#list input").value}</span><button class="del">delete</button></div>`;
+
+
+
+
+                    var deletttttt = document.querySelectorAll('.del');
+
+                    for (var a = 0; a < deletttttt.length; a++) {
+                        deletttttt[a].onclick = function () {
+                            this.parentNode.remove();
+
+                        }
+
+
+                    }
+
+
+                }
+            }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
